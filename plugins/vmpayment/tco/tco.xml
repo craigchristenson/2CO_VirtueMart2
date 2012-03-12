@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmpayment" >
+    <name>VMPAYMENT_TCO</name>
+    <creationDate>June 2011</creationDate>
+    <author>Craig Christenson</author>
+    <authorUrl>http://www.2checkout.com</authorUrl>
+    <copyright>Copyright (C) 2004-2011 Virtuemart Team. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>2.0.1</version>
+    <description><![CDATA[<a href="http://2checkout.com" target="_blank">2Checkout</a> is a popular payment provider and available in many countries. ]]>
+    </description>
+
+    <files>
+	<filename plugin="tco">tco.php</filename>
+    </files>
+    <languages>
+	<language tag="en-GB">en-GB.plg_vmpayment_tco.ini</language>
+    </languages>
+    <params addpath="/administrator/components/com_virtuemart/elements">
+	<param type="vmjpluginwarning" />
+	<param type="spacer" default="VMPAYMENT_TCO_PAYMENT_TITLE" level="level1" />
+	<param type="spacer" default="VMPAYMENT_TCO_PAYMENT_WARNING"   />
+
+	<param type="spacer" default="" level="level1" />
+	<param type="spacer" default="VMPAYMENT_TCO_PAYMENT_SETTINGS" level="level1" />
+	<param	name="payment_logos" type="vmfiles" label="VMPAYMENT_TCO_LOGOS"
+             	description="VMPAYMENT_TCO_LOGOS_DESC"
+             	directory="/images/stories/virtuemart/payment"
+             	default="default" hide_default="1" hide_none="1"
+             	stripext="0"  exclude="^_" />
+
+	<param type="spacer" default="" level="level1" />
+	<param   type="spacer" default="VMPAYMENT_TCO_PARAMS" level="level1" />
+	<param type="text" name="tco_seller_id"  size="50" label="VMPAYMENT_TCO_SELLER_ID"
+             default="123546" description="VMPAYMENT_TCO_SELLER_ID_DESC" />
+	<param type="text" name="tco_secret_word"  size="50" label="VMPAYMENT_TCO_SECRET_WORD"
+             default="tango" description="VMPAYMENT_TCO_SECRET_WORD_DESC" />
+    <param type="spacer" default="" level="level1" />
+	     <!-- BY DEFAULT paypal currency= vendor currency -->
+	<param name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_TCO_CURRENCY" description="VMPAYMENT_TCO_CURRENCY_DESC" />
+	<param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_TCO_COUNTRIES" description="VMPAYMENT_TCO_COUNTRIES_DESC"/>
+    <param name="min_amount" type="text"  label="VMPAYMENT_TCO_MIN_AMOUNT" description="VMPAYMENT_TCO_MIN_AMOUNT_EXPLAIN" />
+    <param name="max_amount" type="text"  label="VMPAYMENT_TCO_MAX_AMOUNT" description="VMPAYMENT_TCO_MAX_AMOUNT_EXPLAIN" />
+    <param name="cost_per_transaction" type="text"  label="VMPAYMENT_TCO_COST_PER_TRANSACTION" description="VMPAYMENT_TCO_COST_PER_TRANSACTION_EXPLAIN" />
+    <param name="cost_percent_total" type="text"  label="VMPAYMENT_TCO_COST_PERCENT_TOTAL" description="VMPAYMENT_TCO_COST_PERCENT_TOTAL_EXPLAIN" />
+    <param name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="VMPAYMENT_TCO_TAX" description="VMPAYMENT_TCO_TAX_EXPLAIN" />
+    <param type="spacer" default="" level="level1" />
+    <param name="debug" type="radio" default="0" label="VMPAYMENT_TCO_DEBUG" description="VMPAYMENT_TCO_DEBUG_DESC" >
+        <option value="0">COM_VIRTUEMART_NO</option>
+        <option value="1">COM_VIRTUEMART_YES</option>
+    </param>
+    <param name="sandbox" type="radio" default="1" label="VMPAYMENT_TCO_SANDBOX" description="VMPAYMENT_TCO_SANDBOX_DESC" >
+        <option value="0">COM_VIRTUEMART_NO</option>
+        <option value="1">COM_VIRTUEMART_YES</option>
+    </param>
+	<param type="spacer" default="" level="level1" />
+	<param type="spacer" default="VMPAYMENT_TCO_PAYMENT_PAGE" level="level1" />
+	<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_TCO_STATUS_PENDING" description="VMPAYMENT_TCO_STATUS_PENDING_EXPLAIN" />
+	<param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_TCO_STATUS_SUCCESS" description="VMPAYMENT_TCO_STATUS_SUCCESS_EXPLAIN" />
+	<param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_TCO_STATUS_FAILED" description="VMPAYMENT_TCO_STATUS_FAILED_EXPLAIN" />
+    </params>
+
+
+</install>

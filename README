@@ -1,0 +1,21 @@
+VirtueMart 2 Settings
+1. Download the 2Checkout payment module at https://github.com/craigchristenson/2CO_VirtueMart2
+2. Upload the files to your joomla directory on your web server.
+3. Run the database_update.sql file on your ZenCart database. If your database makes use of prefixes on the tables, replace ##### with your prefix. (Joomla 1.6, 1.7, or 2.5)
+4. Under Shop -> Payment methods, click New.
+5. Enter Payment Name.
+6. Select Yes for Published.
+7. Enter Payment Description. Example: Credit Card (Visa, MasterCard, American Express, Discover, JCB, Diners Club, PIN Debit) and PayPal
+8. Click Save.
+9. Click Configuration.
+10. Enter your 2Checkout Seller ID. (2Checkout Account Number) 
+11. Enter your 2Checkout Secret Word. (Must be the same value entered on your 2Checkout Site Management page.)
+12. For demo sales set Sandbox to "Yes". For live sales keep Sandbox at "No".
+13. Click Save.
+
+2Checkout Settings
+1. Sign in to your 2Checkout account. 
+2. Click the Account tab and Site Management subcategory. 
+3. Under Direct Return select Header Redirect.
+4. Enter your Secret Word. (Must be the same value entered in your VirtueMart admin.) 
+5. Click Save Changes. 
