@@ -1,7 +1,7 @@
 VirtueMart 2 Settings
 1. Download the 2Checkout payment module at https://github.com/craigchristenson/2CO_VirtueMart2
 2. Upload the files to your joomla directory on your web server.
-3. Run the database_update.sql file on your ZenCart database. If your database makes use of prefixes on the tables, replace ##### with your prefix. (Joomla 1.6, 1.7, or 2.5)
+3. Run the database_update.sql file on your Joomla database. If your database makes use of prefixes on the tables, replace ##### with your prefix. (Joomla 1.6, 1.7, or 2.5)
 4. Under Shop -> Payment methods, click New.
 5. Enter Payment Name.
 6. Select Yes for Published.
