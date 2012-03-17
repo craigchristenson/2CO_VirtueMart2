@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <install version="1.5" type="plugin" group="vmpayment" >
     <name>VMPAYMENT_TCO</name>
-    <creationDate>June 2011</creationDate>
+    <creationDate>March 2012</creationDate>
     <author>Craig Christenson</author>
     <authorUrl>http://www.2checkout.com</authorUrl>
     <copyright>Copyright (C) 2004-2011 Virtuemart Team. All rights reserved.</copyright>
@@ -36,7 +36,7 @@
 	<param type="text" name="tco_secret_word"  size="50" label="VMPAYMENT_TCO_SECRET_WORD"
              default="tango" description="VMPAYMENT_TCO_SECRET_WORD_DESC" />
     <param type="spacer" default="" level="level1" />
-	     <!-- BY DEFAULT paypal currency= vendor currency -->
+
 	<param name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_TCO_CURRENCY" description="VMPAYMENT_TCO_CURRENCY_DESC" />
 	<param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_TCO_COUNTRIES" description="VMPAYMENT_TCO_COUNTRIES_DESC"/>
     <param name="min_amount" type="text"  label="VMPAYMENT_TCO_MIN_AMOUNT" description="VMPAYMENT_TCO_MIN_AMOUNT_EXPLAIN" />
