@@ -243,7 +243,7 @@ class plgVmPaymentTco extends vmPSPlugin {
 			$payment_name = $this->renderPluginName($method);
 			$html = $this->_getPaymentResponseHtml($tco_data, $payment_name);
 			if ($virtuemart_order_id) {
-				$order['customer_notified']=0;
+				$order['customer_notified']=1;
 				$order['order_status'] = $this->_getPaymentStatus($method, $tco_data['key'], $tco_data['demo'], $tco_data['order_number'], $tco_data['total']);
 				$order['comments'] = JText::sprintf('VMPAYMENT_TCO_PAYMENT_STATUS_CONFIRMED', $order_number);
 				// send the email ONLY if payment has been accepted
