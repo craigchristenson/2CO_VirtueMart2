@@ -57,10 +57,10 @@ class plgVmPaymentTco extends vmPSPlugin {
     {
     	$tcoDetails = array(
                 'seller_id' => $method->tco_seller_id,
-                'secret_word' => $method->tco_secret_word, 
+                'secret_word' => $method->tco_secret_word,
                 'url' => 'https://www.2checkout.com/checkout/spurchase'
             );
-    
+
     	return $tcoDetails;
     }
 
@@ -109,8 +109,7 @@ class plgVmPaymentTco extends vmPSPlugin {
 		$new_status = '';
 
 		$usrBT = $order['details']['BT'];
-		$address = ((isset($order['details']['ST'])) ? $order['details']['ST'] : $order['details']['BT']);
-
+                $address = ((isset($order['details']['BT'])) ? $order['details']['BT'] : $order['details']['ST']);
 
 		if (!class_exists('TableVendors'))
 		require(JPATH_VM_ADMINISTRATOR . DS . 'table' . DS . 'vendors.php');
