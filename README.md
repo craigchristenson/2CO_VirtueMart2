@@ -26,3 +26,5 @@
 3. Under **Direct Return** select **Header Redirect**.
 4. Enter your **Secret Word**._(Must be the same value entered in your VirtueMart admin.)_
 5. Click **Save Changes**. 
+
+Please feel free to contact 2Checkout directly with any integration questions.
