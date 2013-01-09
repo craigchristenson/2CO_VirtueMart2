@@ -140,25 +140,26 @@ class plgVmPaymentTco extends vmPSPlugin {
 	    }
 		$testReq = $method->debug == 1 ? 'YES' : 'NO';
 		$post_variables = Array(
-	    "sid" => $tcoDetails['seller_id'],
-        "x_receipt_link_url" => JROUTE::_(JURI::root() . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm=' . $order['details']['BT']->virtuemart_paymentmethod_id."&o_id={$order['details']['BT']->order_number}"),
-	    "merchant_order_id" => $order['details']['BT']->order_number,
-	    "custom" => $return_context,
-	    "cart_order_id" => JText::_('VMPAYMENT_TCO_ORDER_NUMBER') . ': ' . $order['details']['BT']->order_number,
-	    "total" => $totalInPaymentCurrency,
-	    "currency_code" => $currency_code_3,
-	    "first_name" => $address->first_name,
-	    "last_name" => $address->last_name,
-	    "street_address" => $address->address_1,
-	    "street_address2" => isset($address->address_2) ? $address->address_2 : '',
-	    "zip" => $address->zip,
-	    "city" => $address->city,
-	    "state" => isset($address->virtuemart_state_id) ? ShopFunctions::getStateByID($address->virtuemart_state_id) : '',
-	    "country" => ShopFunctions::getCountryByID($address->virtuemart_country_id, 'country_3_code'),
-	    "email" => $order['details']['BT']->email,
-	    "phone" => $address->phone_1,
-		"demo" => $demo,
-	    "id_type" => "1"
+                    "sid" => $tcoDetails['seller_id'],
+                    "x_receipt_link_url" => JROUTE::_(JURI::root() . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm=' . $order['details']['BT']->virtuemart_paymentmethod_id."&o_id={$order['details']['BT']->order_number}"),
+                    "merchant_order_id" => $order['details']['BT']->order_number,
+                    "custom" => $return_context,
+                    "cart_order_id" => JText::_('VMPAYMENT_TCO_ORDER_NUMBER') . ': ' . $order['details']['BT']->order_number,
+                    "total" => $totalInPaymentCurrency,
+                    "currency_code" => $currency_code_3,
+                    "first_name" => $address->first_name,
+                    "last_name" => $address->last_name,
+                    "street_address" => $address->address_1,
+                    "street_address2" => isset($address->address_2) ? $address->address_2 : '',
+                    "zip" => $address->zip,
+                    "city" => $address->city,
+                    "state" => isset($address->virtuemart_state_id) ? ShopFunctions::getStateByID($address->virtuemart_state_id) : '',
+                    "country" => ShopFunctions::getCountryByID($address->virtuemart_country_id, 'country_3_code'),
+                    "email" => $order['details']['BT']->email,
+                    "phone" => $address->phone_1,
+                    "demo" => $demo,
+                    "purchase_step" => 'payment-method',
+                    "id_type" => "1"
 		);
 
 	  $i = 0;
