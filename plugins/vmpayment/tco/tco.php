@@ -37,6 +37,7 @@ class plgVmPaymentTco extends vmPSPlugin {
 	    'payment_currency' => array('', 'int'),
 	    'payment_logos' => array('', 'char'),
 	    'sandbox' => array(0, 'char'),
+        'direct_checkout' => array(0, 'char'),
 	    'debug' => array(0, 'int'),
 	    'status_pending' => array('', 'char'),
 	    'status_success' => array('', 'char'),
@@ -188,14 +189,22 @@ class plgVmPaymentTco extends vmPSPlugin {
 		// add spin image
 		$html = '<html><head><title>Redirection</title></head><body><div style="margin: auto; text-align: center;">';
 		$html .= '<form action="' . $tcoDetails['url'] . '" method="post" name="vm_tco_form" >';
-		$html.= '<input type="submit"  value="' . JText::_('VMPAYMENT_TCO_REDIRECT_MESSAGE') . '" />';
 		foreach ($post_variables as $name => $value) {
 			$html.= '<input type="hidden" name="' . $name . '" value="' . htmlspecialchars($value) . '" />';
 		}
-		$html.= '</form></div>';
-		$html.= ' <script type="text/javascript">';
-		$html.= ' document.vm_tco_form.submit();';
-		$html.= ' </script></body></html>';
+
+        if ($method->direct_checkout == 1) {
+            $html.= '<input type="submit"  value="' . JText::_('VMPAYMENT_TCO_BUTTON_MESSAGE') . '" />';
+            $html.= '</form></div>';
+            $html.= '<script src="https://www.2checkout.com/static/checkout/javascript/direct.min.js"></script>';
+        } else {
+            $html.= '<input type="submit"  value="' . JText::_('VMPAYMENT_TCO_REDIRECT_MESSAGE') . '" />';
+            $html.= '</form></div>';
+            $html.= ' <script type="text/javascript">';
+            $html.= ' document.vm_tco_form.submit();';
+            $html.= '</script>';
+        }
+        $html.= '</body></html>';
 
 		return $this->processConfirmedOrderPaymentResponse(2, $cart, $order, $html, $dbValues['payment_name'], $new_status);
 	}

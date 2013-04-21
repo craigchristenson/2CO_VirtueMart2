@@ -53,6 +53,10 @@
         <option value="0">COM_VIRTUEMART_NO</option>
         <option value="1">COM_VIRTUEMART_YES</option>
     </param>
+    <param name="direct_checkout" type="radio" default="1" label="VMPAYMENT_TCO_DIRECT" description="VMPAYMENT_TCO_DIRECT_DESC" >
+        <option value="0">COM_VIRTUEMART_NO</option>
+        <option value="1">COM_VIRTUEMART_YES</option>
+    </param>
 	<param type="spacer" default="" level="level1" />
 	<param type="spacer" default="VMPAYMENT_TCO_PAYMENT_PAGE" level="level1" />
 	<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_TCO_STATUS_PENDING" description="VMPAYMENT_TCO_STATUS_PENDING_EXPLAIN" />
