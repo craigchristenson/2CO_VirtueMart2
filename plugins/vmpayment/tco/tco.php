@@ -249,11 +249,13 @@ class plgVmPaymentTco extends vmPSPlugin {
 			$order_number = $tco_data['merchant_order_id'];
 			$return_context = $tco_data['custom'];
 			$virtuemart_order_id = VirtueMartModelOrders::getOrderIdByOrderNumber($order_number);
-			$payment_name = $this->renderPluginName($method);
+            $customer_order = VirtueMartModelOrders::getOrder($virtuemart_order_id);
+            $customer_total = round($customer_order['details']['BT']->order_total, 2);
+            $payment_name = $this->renderPluginName($method);
 			$html = $this->_getPaymentResponseHtml($tco_data, $payment_name);
 			if ($virtuemart_order_id) {
 				$order['customer_notified']=1;
-				$order['order_status'] = $this->_getPaymentStatus($method, $tco_data['key'], $tco_data['demo'], $tco_data['order_number'], $tco_data['total']);
+				$order['order_status'] = $this->_getPaymentStatus($method, $tco_data['key'], $tco_data['demo'], $tco_data['order_number'], $customer_total);
 				$order['comments'] = JText::sprintf('VMPAYMENT_TCO_PAYMENT_STATUS_CONFIRMED', $order_number);
 				// send the email ONLY if payment has been accepted
 				$modelOrder = VmModel::getModel('orders');
