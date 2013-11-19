@@ -250,7 +250,7 @@ class plgVmPaymentTco extends vmPSPlugin {
 			$return_context = $tco_data['custom'];
 			$virtuemart_order_id = VirtueMartModelOrders::getOrderIdByOrderNumber($order_number);
             $customer_order = VirtueMartModelOrders::getOrder($virtuemart_order_id);
-            $customer_total = round($customer_order['details']['BT']->order_total, 2);
+            $customer_total = (number_format((float)$customer_order['details']['BT']->order_total, 2, '.', ''));
             $payment_name = $this->renderPluginName($method);
 			$html = $this->_getPaymentResponseHtml($tco_data, $payment_name);
 			if ($virtuemart_order_id) {
